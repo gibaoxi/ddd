@@ -345,7 +345,7 @@ class BiliBiliCheckIn(object):
             title = aid_list[0].get("title")
             report_ret = self.report_task(session=session, bili_jct=bili_jct, aid=aid, cid=cid)
             if report_ret.get("code") == 0:
-                report_msg = f"观看《{title}》300秒"
+                report_msg = f"观看《{title}》4000秒"
             else:
                 report_msg = f"任务失败"
                 print(report_msg)

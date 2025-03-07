@@ -112,7 +112,7 @@ class BiliBiliCheckIn(object):
         return ret
 
     @staticmethod
-    def report_task(session, bili_jct, aid: int, cid: int, progres: int = 4000) -> dict:
+    def report_task(session, bili_jct, aid: int, cid: int, progres: int = 30) -> dict:
         """
         B站上报视频观看进度
         aid int 视频av号
@@ -133,6 +133,7 @@ class BiliBiliCheckIn(object):
         url = "https://api.bilibili.com/x/web-interface/share/add"
         post_data = {"aid": aid, "csrf": bili_jct}
         ret = session.post(url=url, data=post_data).json()
+        print(ret)
         return ret
 
     @staticmethod

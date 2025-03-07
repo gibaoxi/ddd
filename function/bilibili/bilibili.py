@@ -18,7 +18,7 @@ class BiliBiliCheckIn(object):
     def get_nav(session):
         url = "https://api.bilibili.com/x/web-interface/nav"
         ret = session.get(url=url).json()
-        # print(ret) #取消本段输出
+        print(ret) #取消本段输出
         uname = ret.get("data", {}).get("uname")
         uid = ret.get("data", {}).get("mid")
         is_login = ret.get("data", {}).get("isLogin")
@@ -112,7 +112,7 @@ class BiliBiliCheckIn(object):
         return ret
 
     @staticmethod
-    def report_task(session, bili_jct, aid: int, cid: int, progres: int = 300) -> dict:
+    def report_task(session, bili_jct, aid: int, cid: int, progres: int = 4000) -> dict:
         """
         B站上报视频观看进度
         aid int 视频av号

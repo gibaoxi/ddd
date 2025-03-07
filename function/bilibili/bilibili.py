@@ -112,7 +112,7 @@ class BiliBiliCheckIn(object):
         return ret
 
     @staticmethod
-    def report_task(session, bili_jct, aid: int, cid: int, progres: int = 30) -> dict:
+    def report_task(session, bili_jct, aid: int, cid: int, progres: int = 4000) -> dict:
         """
         B站上报视频观看进度
         aid int 视频av号

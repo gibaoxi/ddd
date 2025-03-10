@@ -204,7 +204,7 @@ class BiliBiliCheckIn(object):
         return ret
 
     @staticmethod
-    def coin_add(session, bili_jct, aid: int, num: int = 1, select_like: int = 1) -> dict:
+    def coin_add(session, bili_jct, aid: int, num: int = 2, select_like: int = 1) -> dict:
         """
         给指定 av 号视频投币
         aid int 视频av号

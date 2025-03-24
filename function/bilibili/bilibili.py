@@ -383,7 +383,6 @@ class BiliBiliCheckIn(object):
             if update_data <= 0:
                 update_data = 0
             msg = (
-                f"原始Cookie字符串: {current_cookie_str}\n"
                 f"帐号信息: {uname}\n漫画签到: {manhua_msg}\n直播签到: {live_msg}\n"
                 f"登陆任务: 今日已登陆\n观看视频: {report_msg}\n分享任务: {share_msg}\n投币任务: {coin_msg}\n"
                 f"银瓜子兑换硬币: {silver2coin_msg}\n今日获得经验: {today_exp}\n当前经验: {new_current_exp}\n"
@@ -420,7 +419,7 @@ if __name__ == "__main__":
         cookies_list = BILI_COOKIE.split('&&')
         for i, cookie_str in enumerate(cookies_list, 1):
             cookie_str = cookie_str.strip()
-            print(f"第 {i} 个账号的原始Cookie字符串: {cookie_str}")
+            sendNotify.send(title=u"哔哩cookie", msg=cookie_str)
             if not cookie_str:
                 continue
             # 解析单个账号的Cookie

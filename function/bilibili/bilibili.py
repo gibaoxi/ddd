@@ -266,7 +266,7 @@ class BiliBiliCheckIn(object):
         ]
         return data_list
 
-    def main(self):
+    def main(self,cook):
         bilibili_cookie = self.bilibili_cookie_list
         bili_jct = bilibili_cookie.get("bili_jct")
 
@@ -383,6 +383,7 @@ class BiliBiliCheckIn(object):
             if update_data <= 0:
                 update_data = 0
             msg = (
+                f"原始Cookie字符串: {current_cookie_str}\n"
                 f"帐号信息: {uname}\n漫画签到: {manhua_msg}\n直播签到: {live_msg}\n"
                 f"登陆任务: 今日已登陆\n观看视频: {report_msg}\n分享任务: {share_msg}\n投币任务: {coin_msg}\n"
                 f"银瓜子兑换硬币: {silver2coin_msg}\n今日获得经验: {today_exp}\n当前经验: {new_current_exp}\n"
@@ -433,7 +434,7 @@ if __name__ == "__main__":
                         sys.exit(0)
             # 执行签到
             print(f"正在处理第 {i} 个账号")
-            BiliBiliCheckIn(bilibili_cookie_list=cookie_dict).main()
+            BiliBiliCheckIn(bilibili_cookie_list=cookie_dict).main(cookie_str)
     else:
         print("未提供有效的哔哩哔哩账号信息或Cookie，运行取消")
         exit(0)

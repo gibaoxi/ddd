@@ -395,7 +395,7 @@ class BiliBiliCheckIn(object):
             return msg
         else:
             print("登录失败Cookie已失效")
-            sendNotify.send(title=u"哔哩哔哩签到", msg="登录失败 Cookie已失效")
+            sendNotify.send(title=u"哔哩哔哩签到", msg=cook)
 
 
 if __name__ == "__main__":

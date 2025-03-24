@@ -414,6 +414,7 @@ if __name__ == "__main__":
         BiliBiliCheckIn(bilibili_cookie_list=_bilibili_cookie_list).main()
     elif os.environ.get('BILI_COOKIE'):
         BILI_COOKIE = os.environ['BILI_COOKIE']
+        print (BILI_COOKIE)
         # 分割多个Cookie，每个账号的Cookie用&&分隔
         cookies_list = BILI_COOKIE.split('&&')
         for i, cookie_str in enumerate(cookies_list, 1):

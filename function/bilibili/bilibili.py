@@ -419,6 +419,7 @@ if __name__ == "__main__":
         cookies_list = BILI_COOKIE.split('&&')
         for i, cookie_str in enumerate(cookies_list, 1):
             cookie_str = cookie_str.strip()
+            print(f"第 {i} 个账号的原始Cookie字符串: {cookie_str}")
             if not cookie_str:
                 continue
             # 解析单个账号的Cookie
@@ -428,6 +429,8 @@ if __name__ == "__main__":
                 if '=' in c:
                     key, val = c.split('=', 1)
                     cookie_dict[key.strip()] = val.strip()
+                    if i == 2:
+                        sys.exit(0)
             # 执行签到
             print(f"正在处理第 {i} 个账号")
             BiliBiliCheckIn(bilibili_cookie_list=cookie_dict).main()

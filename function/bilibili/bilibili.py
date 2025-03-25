@@ -267,7 +267,7 @@ class BiliBiliCheckIn(object):
         ]
         return data_list
 
-    def main(self,cook):
+    def main(self):
         bilibili_cookie = self.bilibili_cookie_list
         bili_jct = bilibili_cookie.get("bili_jct")
 

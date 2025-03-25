@@ -371,7 +371,7 @@ class BiliBiliCheckIn(object):
             else:
                 silver2coin_msg = f"未开启银瓜子兑换硬币功能"
             live_stats = self.live_status(session=session)
-            uname, uid, is_login, new_coin, vip_type, new_current_exp = self.get_nav(session=session)
+            uname, uid, is_login, new_coin, vip_type, new_current_exp, level = self.get_nav(session=session)
             # print(uname, uid, is_login, new_coin, vip_type, new_current_exp)
             reward_ret = self.reward(session=session)
             login = reward_ret.get("data", {}).get("login")

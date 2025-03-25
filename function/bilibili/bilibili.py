@@ -25,7 +25,8 @@ class BiliBiliCheckIn(object):
         coin = ret.get("data", {}).get("money")
         vip_type = ret.get("data", {}).get("vipType")
         current_exp = ret.get("data", {}).get("level_info", {}).get("current_exp")
-        return uname, uid, is_login, coin, vip_type, current_exp
+        level = ret.get("data", {}).get("level_info", {}).get("current_level")
+        return uname, uid, is_login, coin, vip_type, current_exp, level
 
     @staticmethod
     def reward(session) -> dict:
@@ -383,7 +384,7 @@ class BiliBiliCheckIn(object):
             if update_data <= 0:
                 update_data = 0
             msg = (
-                f"帐号信息: {uname}\n漫画签到: {manhua_msg}\n直播签到: {live_msg}\n"
+                f"帐号信息: {uname}\n等级: {level}\n漫画签到: {manhua_msg}\n直播签到: {live_msg}\n"
                 f"登陆任务: 今日已登陆\n观看视频: {report_msg}\n分享任务: {share_msg}\n投币任务: {coin_msg}\n"
                 f"银瓜子兑换硬币: {silver2coin_msg}\n今日获得经验: {today_exp}\n当前经验: {new_current_exp}\n"
                 f"按当前速度升级还需: {update_data}天\n{live_stats}"

@@ -298,7 +298,7 @@ class BiliBiliCheckIn(object):
             }
         )
         success_count = 0
-        uname, uid, is_login, coin, vip_type, current_exp = self.get_nav(session=session)
+        uname, uid, is_login, coin, vip_type, current_exp, level= self.get_nav(session=session)
         if is_login:
             manhua_msg = self.manga_sign(session=session)
             print(manhua_msg)
@@ -431,7 +431,7 @@ if __name__ == "__main__":
                     cookie_dict[key.strip()] = val.strip()
             # 执行签到
             print(f"正在处理第 {i} 个账号")
-            BiliBiliCheckIn(bilibili_cookie_list=cookie_dict).main(cookie_str)
+            BiliBiliCheckIn(bilibili_cookie_list=cookie_dict).main()
     else:
         print("未提供有效的哔哩哔哩账号信息或Cookie，运行取消")
         exit(0)

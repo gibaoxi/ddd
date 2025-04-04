@@ -396,7 +396,7 @@ class BiliBiliCheckIn(object):
             return msg
         else:
             print("登录失败Cookie已失效")
-            sendNotify.send(title=u"哔哩哔哩签到", msg=cook)
+            sendNotify.send(title=u"哔哩哔哩签到", msg='cookie失效')
 
 
 if __name__ == "__main__":
@@ -420,7 +420,7 @@ if __name__ == "__main__":
         cookies_list = BILI_COOKIE.split('&&')
         for i, cookie_str in enumerate(cookies_list, 1):
             cookie_str = cookie_str.strip()
-            # sendNotify.send(title=u"哔哩cookie", msg=cookie_str)
+            sendNotify.send(title=u"哔哩cookie", msg=cookie_str)
             if not cookie_str:
                 continue
             # 解析单个账号的Cookie

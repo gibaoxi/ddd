@@ -294,6 +294,7 @@ class BiliBiliCheckIn(object):
                 "Referer": "https://www.bilibili.com/",
                 "accept-language": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6",
                 "Connection": "keep-alive",
+"Referer": "https://www.bilibili.com/",
             }
         )
         success_count = 0
@@ -418,8 +419,8 @@ if __name__ == "__main__":
         cookies_list = BILI_COOKIE.split('&&')
         for i, cookie_str in enumerate(cookies_list, 1):
             cookie_str = cookie_str.strip()
-            if i == 2:
-                break
+            # if i == 2:
+                # break
             if not cookie_str:
                 continue
             # 解析单个账号的Cookie

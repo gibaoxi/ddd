@@ -295,6 +295,7 @@ class BiliBiliCheckIn(object):
                 "Referer": "https://www.bilibili.com/",
                 "accept-language": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6",
                 "Connection": "keep-alive",
+"Referer": "https://www.bilibili.com/",
             }
         )
         success_count = 0

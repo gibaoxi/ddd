@@ -133,7 +133,7 @@ class BiliBiliCheckIn(object):
         """
         url = "https://api.bilibili.com/x/web-interface/share/add"
         post_data = {"aid": aid, "csrf": bili_jct, "eab_x": "2",
-    "ramval": "8",
+    "ramval": "0",
     "source": "web_normal",
     "ga": "1"}
         ret = session.post(url=url, data=post_data).json()
